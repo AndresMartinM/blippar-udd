@@ -33,10 +33,12 @@ repositorio para el uso de BlippAR
 ---|---
 |![foto](img/cambiarEscena.png)|![foto](img/cambiarEscenaTiempo.png)|
 
+Cambio de escena
 ```json
 {"type":"graph-data","center":{"x":588.3497055380036,"y":1035.8942415222284},"bounds":{"x":496,"y":848,"w":289,"h":147},"nodeData":{"958":{"id":958,"data":{"enabled":true,"objIn":["hX84ZAEXqSwRikXSN3Pwy8"]},"inputs":{"objIn":{"connections":[]},"enabled":{"connections":[]}},"outputs":{"objOut":{"connections":[]},"onTap":{"connections":[{"node":959,"input":"goToScene","data":{"pins":[]}}]}},"position":[496,848],"name":"OnTap"},"959":{"id":959,"data":{"sceneIn":["2aqJjcxVF493KszbrpjR15"]},"inputs":{"goToScene":{"connections":[{"node":958,"output":"onTap","data":{"pins":[]}}]}},"outputs":{},"position":[656,864],"name":"GoToScene"}}}
 ```
 
+Cambio de escena después de un tiempo
 ```json
 {"type":"graph-data","center":{"x":588.3497055380036,"y":1035.8942415222284},"bounds":{"x":496,"y":1120,"w":689,"h":191},"nodeData":{"995":{"id":995,"data":{},"inputs":{},"outputs":{"onSceneStart":{"connections":[{"node":1005,"input":"trigger","data":{"pins":[]}}]}},"position":[496,1120],"name":"OnSceneStart"},"996":{"id":996,"data":{"interval":10},"inputs":{"wait":{"connections":[{"node":1005,"output":"onTrue","data":{"pins":[]}}]},"interval":{"connections":[]}},"outputs":{"onWait":{"connections":[{"node":997,"input":"goToScene","data":{"pins":[]}}]}},"position":[864,1120],"name":"Wait"},"997":{"id":997,"data":{"sceneIn":["2aqJjcxVF493KszbrpjR15"]},"inputs":{"goToScene":{"connections":[{"node":996,"output":"onWait","data":{"pins":[]}}]}},"outputs":{},"position":[1056,1120],"name":"GoToScene"},"1005":{"id":1005,"data":{"value":true},"inputs":{"trigger":{"connections":[{"node":995,"output":"onSceneStart","data":{"pins":[]}}]},"value":{"connections":[]}},"outputs":{"onTrue":{"connections":[{"node":996,"input":"wait","data":{"pins":[]}}]},"onFalse":{"connections":[]}},"position":[704,1168],"name":"Branch"}}}
 ```
