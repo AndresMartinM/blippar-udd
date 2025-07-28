@@ -23,7 +23,7 @@ Para este caso se está usando del tipo ***Surface*** y se abre la siguiente int
 
 En ella hay una sección central en la que se muestra un entorno tridimensional en el que se pueden poner distintos objetos, que se encuentran el costado izquierdo, además en el lado derecho aparecen distintas propiedades asociadas al objeto que se tenga seleccionado.
 
-Para moverse por el espacio 3d 
+Para moverse por el espacio 3d se debe usar el *mouse*, arrastrando en el entorno se hace un movimiento de paneo, arrastrando con shift presionado produce un movimiento entorno al centro de la vista.
 
 ![foto](img/subirAsset.png)
 
