@@ -17,6 +17,13 @@ repositorio para el uso de BlippAR
 
 ### Interfaz
 
+![foto](img/interfaz.png)
+
+![foto](img/subirAsset.png)
+
+![foto](img/arrastrarAsset.png)
+
+![foto](img/timeline.png)
 
 
 ## Acciones y eventos
@@ -25,6 +32,7 @@ repositorio para el uso de BlippAR
 
 ![foto](img/accionesEventosVacia.png)
 
+![foto](img/arrastrarNodo.png)
 
 ### Nodos de ejemplo
 
@@ -67,7 +75,7 @@ Cambio de escena después de un tiempo
 {"type":"graph-data","center":{"x":50.30770952154537,"y":2448.1348493559954},"bounds":{"x":-432,"y":1376,"w":681,"h":1421},"nodeData":{"777":{"id":777,"data":{"interval":0.6,"rotation":[0,380,0],"easing":"easeOutQuad","objIn":["izftGdKhTpAaETcNfTSvaB"]},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":785,"output":"onFinish","data":{"pins":[]}}]},"rotation":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[]}},"position":[-176,1568],"name":"Rotate"},"778":{"id":778,"data":{"enabled":true,"objIn":["izftGdKhTpAaETcNfTSvaB"]},"inputs":{"objIn":{"connections":[]},"enabled":{"connections":[]}},"outputs":{"objOut":{"connections":[]},"onTap":{"connections":[{"node":785,"input":"start","data":{"pins":[]}}]}},"position":[-432,1376],"name":"OnTap"},"780":{"id":780,"data":{"interval":0.6,"rotation":[0,750,0],"objIn":["hX84ZAEXqSwRikXSN3Pwy8"],"easing":"easeOutQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":789,"output":"onFinish","data":{"pins":[]}}]},"rotation":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[]}},"position":[16,2208],"name":"Rotate"},"785":{"id":785,"data":{"interval":0.2,"rotation":[0,-20,0],"easing":"easeInQuad","objIn":["izftGdKhTpAaETcNfTSvaB"]},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":778,"output":"onTap","data":{"pins":[]}}]},"rotation":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[{"node":777,"input":"start","data":{"pins":[]}},{"node":892,"input":"trigger","data":{"pins":[]}}]}},"position":[-432,1568],"name":"Rotate"},"789":{"id":789,"data":{"interval":0.2,"rotation":[0,-30,0],"objIn":["hX84ZAEXqSwRikXSN3Pwy8"],"easing":"easeInQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":892,"output":"onTrigger","data":{"pins":[]}}]},"rotation":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[{"node":780,"input":"start","data":{"pins":[]}},{"node":794,"input":"start","data":{"pins":[]}}]}},"position":[-256,2208],"name":"Rotate"},"794":{"id":794,"data":{"objIn":"hX84ZAEXqSwRikXSN3Pwy8","interval":0.3,"scale":[44,38,44],"easing":"easeOutQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":789,"output":"onFinish","data":{"pins":[]}}]},"scale":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[{"node":795,"input":"start","data":{"pins":[]}}]}},"position":[-80,2512],"name":"ScaleTo"},"795":{"id":795,"data":{"objIn":"hX84ZAEXqSwRikXSN3Pwy8","interval":0.3,"scale":[40,40,40],"easing":"easeOutQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":794,"output":"onFinish","data":{"pins":[]}}]},"scale":{"connections":[]},"interval":{"connections":[]}},"outputs":{"onFinish":{"connections":[]}},"position":[96,2512],"name":"ScaleTo"},"855":{"id":855,"data":{"objIn":"hX84ZAEXqSwRikXSN3Pwy8","interval":0.2,"delta":[0,0,-5],"easing":"easeInQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":892,"output":"onTrigger","data":{"pins":[]}}]},"delta":{"connections":[]},"interval":{"connections":[]},"local":{"connections":[]}},"outputs":{"onFinish":{"connections":[{"node":856,"input":"start","data":{"pins":[]}}]}},"position":[-256,1872],"name":"Move"},"856":{"id":856,"data":{"objIn":"hX84ZAEXqSwRikXSN3Pwy8","interval":0.3,"delta":[0,0,20],"easing":"easeOutQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":855,"output":"onFinish","data":{"pins":[]}}]},"delta":{"connections":[]},"interval":{"connections":[]},"local":{"connections":[]}},"outputs":{"onFinish":{"connections":[{"node":858,"input":"start","data":{"pins":[]}}]}},"position":[-80,1872],"name":"Move"},"858":{"id":858,"data":{"objIn":"hX84ZAEXqSwRikXSN3Pwy8","interval":0.3,"delta":[0,0,-15],"easing":"easeOutQuad"},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":856,"output":"onFinish","data":{"pins":[]}}]},"delta":{"connections":[]},"interval":{"connections":[]},"local":{"connections":[]}},"outputs":{"onFinish":{"connections":[]}},"position":[96,1872],"name":"Move"},"892":{"id":892,"data":{},"inputs":{"trigger":{"connections":[{"node":785,"output":"onFinish","data":{"pins":[]}}]}},"outputs":{"onTrigger":{"connections":[{"node":855,"input":"start","data":{"pins":[]}},{"node":789,"input":"start","data":{"pins":[]}}]}},"position":[-384,2112],"name":"CombineEvents"}}}
 ```
 
-|Animación con funciones matemáticas|
+|Animación con variable y funciones matemáticas|
 |---|
 |![foto](img/animacionAlgoritmica.png)|
 
@@ -84,7 +92,13 @@ Cambio de escena después de un tiempo
 ```
 
 
+|Pestaña de variables|Funciones de variables|
+|---|---|
+|![foto](img/variables.png)|![foto](img/variableGetSet.png)|
 
 
 
-## 
+## Probar y publicar
+
+---
+>documentado por [AndresMartinM](https://github.com/AndresMartinM) 2025
