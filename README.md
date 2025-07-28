@@ -9,30 +9,57 @@ repositorio para el uso de BlippAR
 
 ## Primeros pasos
 
-
+![foto](img/crear.png)
 
 ### Tipos de proyectos
 
-
+![foto](img/tipos.png)
 
 ### Interfaz
 
+Para este caso se está usando del tipo ***Surface*** y se abre la siguiente interfaz, que no es muy distinta a las de los otros tipos de proyecto.
+
 ![foto](img/interfaz.png)
+
+En ella hay una sección central en la que se muestra un entorno tridimensional en el que se pueden poner distintos objetos, que se encuentran el costado izquierdo, además en el lado derecho aparecen distintas propiedades asociadas al objeto que se tenga seleccionado.
+
+Para moverse por el espacio 3d 
 
 ![foto](img/subirAsset.png)
 
+Para subir un objeto al proyecto, ya sea una imagen, video, audio o escena 3D, hay que presionar la cruz de `Library > Your Assets` y se pueden traer arrastrando o importar desde librerías digitales; sketchfab para escenas 3d, pixabay para fotografías, videos e ilustraciones.
+
 ![foto](img/arrastrarAsset.png)
+
+En este caso se importó un modelo de una silla desde sketchfab, para incluirla en la escena hay que arrastrarla hasta el lugar en el que se quiera poner. Cada objeto en escena se puede editar desde la pestaña `Basic properties`, ahí se puede cambiar su apariencia, cambiando sus texturas, colores y opciones de renderizado. 
+
+![foto](img/propiedades.png)
+
+Para mover los objetos dentro del espacio 3d, se pueden arrastrar, cambiar los valores desde `Layout`, o bien con la tecla `W`, `E`, y `R`; y arrastrar los distintos ejes que aparecen (para sacar esto basta con presionar `Q`).
+
+|Mover (W)|Rotar (E)|Escalar (R)|
+---|---|---
+|![foto](img/move.png)|![foto](img/rotate.png)|![foto](img/scale.png)|
+
+En la parte central inferior, está el botón de *Play*, este sirve para reproducir lo que se haya puesto en la línea de tiempo que hay más abajo.
+
+Para abrir la línea de tiempo se debe pulsar la flecha que apunta arriba en la barra al lado del tiempo. Ahí se pueden arrastrar las distintas animaciónes o acciones asociadas a los objetos de la escena.
 
 ![foto](img/timeline.png)
 
+Al lado derecho de la línea de tiempo están los `Animation effects` y se pueden arrastrar a la pista de cada objeto, ahý se pueden mover hacia adelante o atrás en el tiempo, además se editan desde 
 
 ## Acciones y eventos
 
-Una herramienta que potencia los proyectos de blippAR es el ***Actions and Events Creator*** 
+Una herramienta que potencia los proyectos de blippAR es el ***Actions and Events Creator***, para usarla hay que presionar el botón que hay en la parte superior de la interfaz y se muestra en la siguiente imagen.
 
 ![foto](img/accionesEventos.png)
 
+Esto hará que se habra la pestaña de acciones y eventos, en ella se encuentra una mesa de trabajo en la que se ponen distintos nodos con el propósito de programar comportamientos en la escena.
+
 ![foto](img/accionesEventosVacia.png)
+
+Para añadir un nodo en la mesa de trabajo se puede arrastrar desde el costado derecho de la pestaña como se muestra en la imagen, o bien hacer click derecho en la mesa de trabajo y seleccionar `Create >` ahí hay múltiples carpetas con distintos nodos. Tambíen si se busca un nodo en específico se puede buscar en la lupa `🔎` del costado superior derecho.
 
 ![foto](img/arrastrarNodo.png)
 
@@ -91,20 +118,20 @@ En este caso con la ayuda de los nodos se pudo generar un flujo que produce una 
 |Animación con variable y funciones matemáticas|
 |---|
 |![foto](img/animacionAlgoritmica.png)|
-
-#### Inicio del tiempo
+#### Animación con variable y funciones matemáticas
+##### Inicio del tiempo
 Al comienzo de la escena se le asigna a la variable `time` el valor de 0. Para esto se usa un nodo `On scene start`, y este se conecta a un nodo `Set variable` (que permite asignar valores a variables), además a Set variable va conectado `Number` con el valor 0.
 ```json
 {"type":"graph-data","center":{"x":172.39137698334605,"y":399.84366932160015},"bounds":{"x":-432,"y":144,"w":348,"h":172},"nodeData":{"8":{"id":8,"data":{"varNameIn":"time"},"inputs":{"set":{"connections":[{"node":10,"output":"onSceneStart","data":{"pins":[]}}]},"value":{"connections":[{"node":17,"output":"num","data":{"pins":[]}}]}},"outputs":{"valueOut":{"connections":[]},"onSet":{"connections":[]}},"position":[-224,144],"name":"SetVariable"},"10":{"id":10,"data":{"position":[-382.26666259765625,193.60000610351562]},"inputs":{},"outputs":{"onSceneStart":{"connections":[{"node":8,"input":"set","data":{"pins":[]}}]}},"position":[-432,144],"name":"OnSceneStart"},"17":{"id":17,"data":{"num":0},"inputs":{},"outputs":{"num":{"connections":[{"node":8,"input":"value","data":{"pins":[]}}]}},"position":[-432,224],"name":"Number"}}}
 ```
 
-#### Contador de tiempo
+##### Contador de tiempo
 Este guarda en la variable `time` la cantidad de segundos que han pasado desde el comienzo. Para ello se usa el nodo `On update`, el evento se conecta al nodo `Set variable`, y el `delta Seconds` a un nodo `Add` junto al valor anterior de `time` obtenido con `Get variable`, el resultado de la suma del nodo `Add` se conecta a `Set variable`.
 ```json
 {"type":"graph-data","center":{"x":172.39137698334605,"y":399.84366932160015},"bounds":{"x":-432,"y":432,"w":444,"h":286},"nodeData":{"11":{"id":11,"data":{"varNameIn":"time"},"inputs":{"set":{"connections":[{"node":40,"output":"onUpdate","data":{"pins":[]}}]},"value":{"connections":[{"node":20,"output":"result","data":{"pins":[]}}]}},"outputs":{"valueOut":{"connections":[]},"onSet":{"connections":[]}},"position":[-128,544],"name":"SetVariable"},"20":{"id":20,"data":{"valueA":0,"valueB":1,"result":0},"inputs":{"valueA":{"connections":[{"node":568,"output":"value","data":{"pins":[]}}]},"valueB":{"connections":[{"node":40,"output":"dt","data":{"pins":[]}}]}},"outputs":{"result":{"connections":[{"node":11,"input":"value","data":{"pins":[]}}]}},"position":[-256,592],"name":"Add"},"40":{"id":40,"data":{"enabled":true,"dt":0},"inputs":{"enabled":{"connections":[]}},"outputs":{"onUpdate":{"connections":[{"node":11,"input":"set","data":{"pins":[]}}]},"dt":{"connections":[{"node":20,"input":"valueB","data":{"pins":[]}}]}},"position":[-432,432],"name":"OnUpdate"},"568":{"id":568,"data":{"scope":"scene","varNameIn":"time"},"inputs":{},"outputs":{"value":{"connections":[{"node":20,"input":"valueA","data":{"pins":[]}}]}},"position":[-432,576],"name":"GetVariable"}}}
 ```
 
-#### Animación algorítmica
+##### Animación algorítmica
 En este caso se usa la función `sin(x)` para realizar un movimiento cíclico de un objeto. En este flujo se vuelve a usar el nodo `On update` lo que indica que se realizará cada fotograma, este nodo se conecta a un `Rotate to`(que a diferencia del `Rotate` realiza un giro a cierta coordenada, independientemente de la orientación anterior); para calcular esta coordenada, se usa el valor de `time` con el nodo `Get variable` que se conecta a un `Multiply` (para aumentar la frecuencia del ciclo) y este se conecta a un nodo `Number function` y se selecciona `sin(A)` en *function* (esto evalúa el tiempo en segundos multiplicado por 10 en la función seno), luego se conecta a otro `Multiply` (que incrementa la amplitud de la oscilación), después se conecta a un `Add` que desplaza los valores de la función (en la práctica hace que el ciclo ocurra en coordenadas mayores); tras eso se conecta a un `Create from XYZ` para asociarlo a un vector.
 ```json
 {"type":"graph-data","center":{"x":574.8149686452732,"y":586.7371246075666},"bounds":{"x":112,"y":320,"w":1097,"h":402},"nodeData":{"570":{"id":570,"data":{"enabled":true,"dt":0},"inputs":{"enabled":{"connections":[]}},"outputs":{"onUpdate":{"connections":[{"node":669,"input":"start","data":{"pins":[]}}]},"dt":{"connections":[]}},"position":[864,320],"name":"OnUpdate"},"669":{"id":669,"data":{"objIn":["hX84ZAEXqSwRikXSN3Pwy8"],"interval":0,"position":0,"easing":"linear","local":false},"inputs":{"objIn":{"connections":[]},"start":{"connections":[{"node":570,"output":"onUpdate","data":{"pins":[]}}]},"position":{"connections":[{"node":675,"output":"xyzOut","data":{"pins":[]}}]},"interval":{"connections":[]},"local":{"connections":[]}},"outputs":{"onFinish":{"connections":[]}},"position":[1056,432],"name":"MoveTo"},"674":{"id":674,"data":{"scope":"scene","varNameIn":"time"},"inputs":{},"outputs":{"value":{"connections":[{"node":678,"input":"valueA","data":{"pins":[]}}]}},"position":[112,352],"name":"GetVariable"},"675":{"id":675,"data":{"x":0,"y":0,"z":0},"inputs":{"x":{"connections":[]},"y":{"connections":[]},"z":{"connections":[{"node":769,"output":"result","data":{"pins":[]}}]}},"outputs":{"xyzOut":{"connections":[{"node":669,"input":"position","data":{"pins":[]}}]}},"position":[800,592],"name":"Vector3"},"676":{"id":676,"data":{"valueA":0,"result":0,"op":"sin"},"inputs":{"valueA":{"connections":[{"node":678,"output":"result","data":{"pins":[]}}]}},"outputs":{"result":{"connections":[{"node":677,"input":"valueA","data":{"pins":[]}}]}},"position":[624,352],"name":"NumberFn"},"677":{"id":677,"data":{"valueA":0,"valueB":3,"result":0},"inputs":{"valueA":{"connections":[{"node":676,"output":"result","data":{"pins":[]}}]},"valueB":{"connections":[]}},"outputs":{"result":{"connections":[{"node":769,"input":"valueA","data":{"pins":[]}}]}},"position":[304,576],"name":"Multiply"},"678":{"id":678,"data":{"valueA":0,"valueB":10,"result":0},"inputs":{"valueA":{"connections":[{"node":674,"output":"value","data":{"pins":[]}}]},"valueB":{"connections":[]}},"outputs":{"result":{"connections":[{"node":676,"input":"valueA","data":{"pins":[]}}]}},"position":[368,352],"name":"Multiply"},"769":{"id":769,"data":{"valueA":0,"valueB":220,"result":220},"inputs":{"valueA":{"connections":[{"node":677,"output":"result","data":{"pins":[]}}]},"valueB":{"connections":[]}},"outputs":{"result":{"connections":[{"node":675,"input":"z","data":{"pins":[]}}]}},"position":[560,576],"name":"Add"}}}
