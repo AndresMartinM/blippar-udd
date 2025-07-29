@@ -3,13 +3,28 @@ repositorio para el uso de BlippAR
 
 ## ¿Qué se puede hacer con BlippAR?
 
+BlippAR es una herramienta online para el desarrollo de experiencias de realidad aumentada.
 
+Aquí algunos ejemplos de lo que se puede hacer con blipAR:
+
+[https://www.youtube.com/watch?v=fWHPYeeRoBg](https://www.youtube.com/watch?v=fWHPYeeRoBg)
+
+[https://www.youtube.com/watch?v=l87ZecILLG4](https://www.youtube.com/watch?v=l87ZecILLG4)
+
+[https://www.youtube.com/watch?v=xmco0MS9n4I](https://www.youtube.com/watch?v=xmco0MS9n4I)
 
 ## Primeros pasos
+
+Para comenzar a desarrollar con blippAR hay que hacer una cuenta desde [<< Sign Up | BlippAR >>](https://accounts.blippar.com/signup/free?next=%2F), luego de esto hay que ir a Blippbuilder y crear un proyecto nuevo con el botón `✚ Create new project`, luego de nombrar el proyecto blippAR pedirá escoger tipo de proyecto, en la actualidad blippAR cuenta con cuatro distintos que se detallan en el punto siguiente.
 
 ![foto](img/crear.png)
 
 ### Tipos de proyectos
+
+- ***Marker* (marcador):** se usa una imagen como punto de referencia para la aparición de los objetos en la escena.
+- ***Face* (rostro):** se usa el rostro de una persona como punto de referencia para la escena.
+- ***Surface* (superficie):** está preparada para posicionarse sobre cualquier superficie.
+- ***Arround you* (alrededor):** muestra los elementos de la escena en torno a un punto central.
 
 ![foto](img/tipos.png)
 
@@ -145,5 +160,14 @@ Para el uso de este último conjunto de nodos, es necesario contar con una varia
 
 ## Probar y publicar
 
+En la esquina superior derecha están las opciones del proyecto.
+
+![opciones del proyecto](img/opciones.png)
+
+-***Customize* (personalizar):** permite getionar las opciones relacionadas al proyecto y su publicación.
+-***Preview* (previsualizar):** sirve para mostrar una simulación del proyecto en el navegador.
+-***Test* (probar):** sirve para probar por un lapso de 20 minutos en dispositivos móviles.
+-***Publish* (publicar):** suele usarse cuando está listo un proyecto, sirve para generar un vínculo web que esté disponible hasta que expresamente se desactive la publicación.
+
 ---
->documentado por [AndresMartinM](https://github.com/AndresMartinM) 2025
+>repositorio documentado y nodos de ejemplo desarrollados por [AndresMartinM](https://github.com/AndresMartinM) 2025
