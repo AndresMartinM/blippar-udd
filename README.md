@@ -1,6 +1,6 @@
 # Guía de uso de BlippAR
 repositorio para el uso de BlippAR
-
+https://ar.blippar.com/6shbjroc3hx4hta4z4rw9nmng3kdt8uzk4j324wo
 
 
 ## ¿Qué se puede hacer con BlippAR?
